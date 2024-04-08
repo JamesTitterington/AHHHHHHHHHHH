@@ -60,7 +60,9 @@ public class ImageGenerator {
         for (int row = centerY - radius; row <= centerY + radius; row++) {
             for (int col = centerX - radius; col <= centerX + radius; col++) {
                 if ((col - centerX) * (col - centerX) + (row - centerY) * (row - centerY) <= radius * radius) {
-                    image[row][col] = color; // Simplified for uniform color
+                     if(row>=0 && row<HEIGHT && col>=0 && col<WIDTH){
+                     image[row][col] = color;
+                     } 
                 }
             }
         }
